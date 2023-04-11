@@ -22,6 +22,7 @@ ul#main-menu-links {
 
 ul#main-menu-links li {
     border-right: 2px #fff solid;
+    margin: 1em 0 1em 0;
     padding: 0 1em 0 1em;
 }
 
@@ -36,16 +37,19 @@ ul#main-menu-links li:last-child {
 
 header img {
     height: auto;
+    min-height: 400px;
+    object-fit: cover;
     width: 100%;
 }
 
 div#first-section {
     background-color: #f2f0e5;
     display: flex;
+    flex-wrap: wrap;
     padding: 2em;
 }
 
-section#our-founder {
+#first-section .flex-item {
     max-width: 50%;
 }
 
@@ -65,19 +69,20 @@ section#highlighted-images {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    max-width: 50%;
 }
 
 div.highlighted-item {
     border: 1px #a04f65 solid;
     height: max-content;
     margin: 0.5em;
+    width: 45%;
 }
 
 .highlighted-item img {
+    display: block;
     max-height: 90px;
-    object-fit: contain;
-    width: 162px;
+    object-fit: cover;
+    width: 100%;
 }
 
 .highlighted-item h3{
@@ -87,6 +92,7 @@ div.highlighted-item {
     padding: 0.5em;
     text-align: center;
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 
 footer {
@@ -94,3 +100,24 @@ footer {
     height: 80px;
 }
 
+@media only screen and (max-width:768px) and (min-width:481px) {
+    div#first-section {
+        flex-direction: column;
+    }
+    #first-section .flex-item {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    div#first-section {
+        flex-direction: column;
+    }
+    #first-section .flex-item {
+        max-width: 100%;
+    }
+    div.highlighted-item {
+        margin: 0.5em;
+        width: 100%;
+    }
+}
